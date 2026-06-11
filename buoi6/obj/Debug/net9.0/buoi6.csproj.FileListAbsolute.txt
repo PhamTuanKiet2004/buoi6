@@ -1,0 +1,14 @@
+C:\RiderProject\buoi6\buoi6\bin\Debug\net9.0\buoi6.exe
+C:\RiderProject\buoi6\buoi6\bin\Debug\net9.0\buoi6.deps.json
+C:\RiderProject\buoi6\buoi6\bin\Debug\net9.0\buoi6.runtimeconfig.json
+C:\RiderProject\buoi6\buoi6\bin\Debug\net9.0\buoi6.dll
+C:\RiderProject\buoi6\buoi6\bin\Debug\net9.0\buoi6.pdb
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.GeneratedMSBuildEditorConfig.editorconfig
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.AssemblyInfoInputs.cache
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.AssemblyInfo.cs
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.csproj.CoreCompileInputs.cache
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.dll
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\refint\buoi6.dll
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.pdb
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.genruntimeconfig.cache
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\ref\buoi6.dll
