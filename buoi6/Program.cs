@@ -1,4 +1,4 @@
-﻿//bai 19
+//bai 19
 /*Console.WriteLine("Nhap 1 ki tu: ");
 string input = Console.ReadLine();
 bool isCorrect = false;
@@ -207,6 +207,206 @@ Console.WriteLine("Khau tru BHXH + BHYT la: "+bhxh );
 Console.WriteLine("Khau tru thue TNCN: "+ tncn);
 double luongThucNhan = Math.Floor(tongThuNhap - bhxh - tncn);
 Console.WriteLine("Luong thuc nhan cua ban: "+luongThucNhan);
+
+
+// bai 3:
+Console.WriteLine("--- CHUONG TRINH TINH HOA DON BIGMART 2026 ---");
+
+            Console.Write("Nhap tong tien mua hang chua giam gia (VND): ");
+            double tongTienGoc = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Chon loai thanh vien (1: Thuong, 2: Silver, 3: Gold, 4: Platinum): ");
+            int loaiThanhVien = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Co su dung voucher khong? (Y/N): ");
+            string coVoucher = Console.ReadLine().Trim().ToUpper();
+
+            Console.Write("Nhap so diem tich luy hien co (nhap 0 neu khong co hoac khong dung): ");
+            int diemTichLuy = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Phuong thuc thanh toan (1: Tien mat, 2: Chuyen khoan/Vi dien tu): ");
+            int phuongThucTT = Convert.ToInt32(Console.ReadLine());
+
+
+            double phanTramGiam = 0;
+            if (loaiThanhVien == 1)
+            {
+                if (tongTienGoc > 5000000) phanTramGiam = 5;
+                else if (tongTienGoc > 2000000) phanTramGiam = 2;
+                else phanTramGiam = 0;
+            }
+            else if (loaiThanhVien == 2) 
+            {
+                if (tongTienGoc > 5000000) phanTramGiam = 7;
+                else if (tongTienGoc > 2000000) phanTramGiam = 4;
+                else phanTramGiam = 3;
+            }
+            else if (loaiThanhVien == 3) 
+            {
+                if (tongTienGoc > 5000000) phanTramGiam = 10;
+                else if (tongTienGoc > 2000000) phanTramGiam = 6;
+                else phanTramGiam = 5;
+            }
+            else if (loaiThanhVien == 4) 
+            {
+                if (tongTienGoc > 5000000) phanTramGiam = 12;
+                else if (tongTienGoc > 2000000) phanTramGiam = 7;
+                else phanTramGiam = 8;
+            }
+
+            double tienGiamThanhVien = tongTienGoc * (phanTramGiam / 100);
+            double tienSauGiamThanhVien = tongTienGoc - tienGiamThanhVien;
+
+
+            double tienGiamVoucher = 0;
+            if (coVoucher == "Y")
+            {
+                if (tienSauGiamThanhVien > 3000000)
+                {
+                    tienGiamVoucher = 3000000; 
+                }
+                else if (tienSauGiamThanhVien > 1000000)
+                {
+                    tienGiamVoucher = 100000;
+                }
+            }
+            double tienSauVoucher = tienSauGiamThanhVien - tienGiamVoucher;
+
+
+            double tienGiamDiem = 0;
+            if (diemTichLuy >= 100)
+            {
+
+                int soDiemHopLe = (diemTichLuy / 100) * 100; 
+                tienGiamDiem = soDiemHopLe * 100; 
+
+                if (tienGiamDiem > tienSauVoucher)
+                {
+                    tienGiamDiem = tienSauVoucher; 
+                }
+            }
+            double tienSauDiem = tienSauVoucher - tienGiamDiem;
+            double tienGiamPTTT = 0;
+            if (phuongThucTT == 2)
+            {
+                tienGiamPTTT = tienSauDiem * 0.005;
+            }
+            double tongTienThanhToan = tienSauDiem - tienGiamPTTT;
+
+
+            tongTienThanhToan = Math.Round(tongTienThanhToan);
+
+            int diemTichLuyMoi = (int)(tongTienThanhToan / 100000);
+
+            // 6. In hóa đơn
+            Console.WriteLine("\n============= HOA DON BIGMART =============");
+            Console.WriteLine($"Tong tien hang goc:      {tongTienGoc:N0} d");
+            Console.WriteLine($"Giam gia thanh vien ({phanTramGiam}%): -{tienGiamThanhVien:N0} d");
+            Console.WriteLine($"Giam gia Voucher:        -{tienGiamVoucher:N0} d");
+            Console.WriteLine($"Giam tu diem tich luy:   -{tienGiamDiem:N0} d");
+            if (phuongThucTT == 2)
+            {
+                Console.WriteLine($"Giam Chuyen khoan (0.5%):-{tienGiamPTTT:N0} d");
+            }
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine($"TONG TIEN THANH TOAN:    {tongTienThanhToan:N0} d");
+            Console.WriteLine($"Diem tich luy moi nhan:  +{diemTichLuyMoi} diem");
+            Console.WriteLine("===========================================");
+
+
+// bai 4:
+while (true)
+            {
+                Console.WriteLine("--- CHUONG TRINH QUAN LY DAT PHONG KHACH SAN 2026 ---");
+                Console.Write("Nhap so ngay o: ");
+                int soNgayO = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Chon loai phong (1: Standard, 2: Deluxe, 3: Suite): ");
+                int loaiPhong = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Nhap so luong nguoi lon: ");
+                int soNguoiLon = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Nhap so luong tre em (duoi 12 tuoi): ");
+                int soTreEm = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Nhap so ngay roi vao cuoi tuan (Thu 6, Thu 7): ");
+                int soNgayCuoiTuan = Convert.ToInt32(Console.ReadLine());
+                double donGiaPhong = 0;
+                if (loaiPhong == 1) donGiaPhong = 1200000;
+                else if (loaiPhong == 2) donGiaPhong = 2500000;
+                else if (loaiPhong == 3) donGiaPhong = 4800000;
+                
+                int soNgayThuong = soNgayO - soNgayCuoiTuan;
+                if (soNgayThuong < 0) soNgayThuong = 0; 
+                double tienPhongNgayThuong = soNgayThuong * donGiaPhong;
+                double tienPhongCuoiTuan = soNgayCuoiTuan * (donGiaPhong * 1.2); 
+                double tongTienPhongGoc = tienPhongNgayThuong + tienPhongCuoiTuan;
+                double tienGiamNgayThu5 = 0;
+                if (soNgayO >= 5)
+                {
+                    tienGiamNgayThu5 = tongTienPhongGoc * 0.10;
+                }
+                double tienPhongSauGiam = tongTienPhongGoc - tienGiamNgayThu5;
+                double tienPhuThuTreEm = 0;
+                if (soTreEm > 1)
+                {
+                    int soTrePhuThu = soTreEm - 1;
+                    tienPhuThuTreEm = soTrePhuThu * (donGiaPhong * 0.3) * soNgayO;
+                }
+                double tienDichVu = 0;
+                Console.Write("Su dung Buffet an sang? (Y/N): ");
+                if (Console.ReadLine().Trim().ToUpper() == "Y")
+                {
+                    tienDichVu += (soNguoiLon + soTreEm) * 150000 * soNgayO;
+                }
+                Console.Write("Nhap so kg giat ui (Nhap 0 neu khong dung): ");
+                double kgGiatUi = Convert.ToDouble(Console.ReadLine());
+                tienDichVu += kgGiatUi * 80000;
+                Console.Write("Nhap so luot xe dua don san bay (Nhap 0 neu khong dung): ");
+                int soLuotXe = Convert.ToInt32(Console.ReadLine());
+                tienDichVu += soLuotXe * 600000;
+                Console.Write("Nhap so luot su dung Spa (Nhap 0 neu khong dung): ");
+                int soLuotSpa = Convert.ToInt32(Console.ReadLine());
+                tienDichVu += soLuotSpa * 1200000;
+                double tongChiPhiTruocKM = tienPhongSauGiam + tienPhuThuTreEm + tienDichVu;
+                double tienKhuyenMai = 0;
+                if (soNgayO >= 7)
+                {
+                    tienKhuyenMai += tongChiPhiTruocKM * 0.05;
+                }
+                if (tongChiPhiTruocKM > 30000000)
+                {
+                    tienKhuyenMai += tongChiPhiTruocKM * 0.03;
+                }
+                double tienTruocThue = tongChiPhiTruocKM - tienKhuyenMai;
+                double thueVAT = tienTruocThue * 0.10;
+                double tongThanhToanCuoi = tienTruocThue + thueVAT;
+                tongThanhToanCuoi = Math.Round(tongThanhToanCuoi);
+                
+                Console.WriteLine("\n============= HOA DON KHACH SAN =============");
+                Console.WriteLine($"Tien phong goc ({soNgayO} ngay):   {tongTienPhongGoc:N0} d");
+                if (tienGiamNgayThu5 > 0)
+                {
+                    Console.WriteLine($"Giam gia phong (O >= 5 ngay):  -{tienGiamNgayThu5:N0} d");
+                }
+                if (tienPhuThuTreEm > 0)
+                {
+                    Console.WriteLine($"Phu thu tre em (tu be thu 2):  +{tienPhuThuTreEm:N0} d");
+                }
+                Console.WriteLine($"Tong tien dich vu them:        +{tienDichVu:N0} d");
+                if (tienKhuyenMai > 0)
+                {
+                    Console.WriteLine($"Khuyen mai giam them:         -{tienKhuyenMai:N0} d");
+                }
+                Console.WriteLine($"Thue VAT (10%):                +{thueVAT:N0} d");
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine($"TONG TIEN THANH TOAN:          {tongThanhToanCuoi:N0} d");
+                Console.WriteLine("=============================================");
+                
+                Console.Write("\nBan co muon tinh luot dat phong khac khong? (Y/N): ");
+                string tiepTuc = Console.ReadLine().Trim().ToUpper();
+                if (tiepTuc != "Y")
+                {
+                    break; 
+                }
+            }
 
 
 

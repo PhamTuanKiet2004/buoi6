@@ -12,3 +12,4 @@ C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\refint\buoi6.dll
 C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.pdb
 C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.genruntimeconfig.cache
 C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\ref\buoi6.dll
+C:\RiderProject\buoi6\buoi6\obj\Debug\net9.0\buoi6.sourcelink.json
